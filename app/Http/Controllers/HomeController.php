@@ -12,7 +12,7 @@ class HomeController extends Controller
     {
         /* atau Cara 2 */
         $data = [
-            'username'        => 'Laravel 2TIF',
+            'username'        => 'Liska 2TIF',
             'last_login'      => date('Y-m-d H:i:s'),
             'list_pendidikan' => ['SD', 'SMP', 'SMA', 'S1', 'S2', 'S3'],
         ];
@@ -30,10 +30,21 @@ class HomeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+   public function store(Request $request)
+{
+    $request->validate([
+        'nama' => 'required|max:10',
+        'email' => ['required', 'email'],
+        'pertanyaan' => 'required|max:300|min:8',
+    ]);
+
+    $data['nama'] = $request->nama;
+    $data['email'] = $request->email;
+    $data['pertanyaan'] = $request->pertanyaan;
+
+    // Ganti return view(...) menjadi redirect()
+    return redirect()->route('question.respon')->with($data);
+}
 
     /**
      * Display the specified resource.

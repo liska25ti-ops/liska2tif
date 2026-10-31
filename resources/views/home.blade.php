@@ -7,6 +7,7 @@
     <title>My Laravel App</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom-style.css') }}">
     <!-- Custom CSS -->
     <style>
         body {
@@ -56,7 +57,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">My Laravel App</a>
+            <a class="navbar-brand" href="#"><img src="{{ asset('assets/images/logo.png') }}" alt="Logo" height="30" class="me-2">My Laravel App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -83,13 +84,13 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="display-6 mb-2">{{ $username }}</h1>
+           <h1 class="display-6 mb-2 font-custom">{{ $username }}</h1>
             <p class="lead mb-0">{{ $last_login }}</p>
         </div>
     </section>
 
     <!-- Content Section -->
-    <section id="content" class="container ">
+    <section id="content" class="container">
         <div class="row">
             <div class="col-md-6">
                 {{-- About --}}
@@ -163,27 +164,33 @@
                     <div class="card-body">
                         <h5 class="card-title">Form Pertanyaan</h5>
 
-                        <form action="{{ route('question.store') }}" method="POST">
-                            @csrf
+                        {{-- Flash Data Alert --}}
+                       @if (session('info'))
+            <div class="alert alert-info mb-3" style="background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb;">
+                {!! session('info') !!}
+            </div>
+        @endif
 
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama</label>
-                                <input type="text" class="form-control" name="nama">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" name="email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="pertanyaan" class="form-label">Pertanyaan</label>
-                                <textarea class="form-control" rows="4" name="pertanyaan"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
-                        </form>
-                    </div>
-                </div>
+        <form action="{{ route('question.store') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" name="nama" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                <textarea class="form-control" rows="4" name="pertanyaan" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+        </form>
+    </div>
+</div>
                 {{-- Alerts --}}
-                <div class="card ">
+                <div class="card">
                     <div class="card-body">
                         <h3 class="h5 mb-3">Alerts</h3>
                         <div class="alert alert-primary mb-2">Informational alert</div>

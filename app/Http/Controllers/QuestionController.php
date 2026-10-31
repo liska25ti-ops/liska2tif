@@ -25,15 +25,20 @@ class QuestionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+public function store(Request $request)
     {
-        // dd($request->all());
-        $data['nama'] = $request->nama;
-        $data['email'] = $request->email;
-        $data['pertanyaan'] = $request->pertanyaan;
+        // 1. Validasi Input Form
+        $request->validate([
+            'nama' => 'required',
+            'email' => 'required|email',
+            'pertanyaan' => 'required',
+        ]);
 
-        return view('home-question-respon', $data);
+        // 2. Format Teks Pesan dengan Tag <strong> agar Cetak Tebal
+        $pesan = "Terimakasih <strong>{$request->nama}</strong>! Pertanyaan ini: <strong>{$request->pertanyaan}</strong> akan segera direspon melalui email <strong>{$request->email}</strong>";
 
+        // 3. Redirect Kembali ke Halaman Form Membawa Session Flash Data 'info'
+        return redirect()->back()->with('info', $pesan);
     }
 
     /**
