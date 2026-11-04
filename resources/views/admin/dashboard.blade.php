@@ -1,50 +1,32 @@
-<!--
-
-=========================================================
-* Volt Free - Bootstrap 5 Dashboard
-=========================================================
-
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
-* Copyright 2021 Themesberg (https://www.themesberg.com)
-* License (https://themesberg.com/licensing)
-
-* Designed and coded by https://themesberg.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<!-- Primary Meta Tags -->
-	<title>Volt - Free Bootstrap 5 Dashboard</title>
+	<title>Volt - Dashboard Liska</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="title" content="Volt - Free Bootstrap 5 Dashboard">
+	<meta name="title" content="Volt - Dashboard Liska">
 	<meta name="author" content="Themesberg">
 
 	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="120x120" href="../../assets/img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicon/favicon-16x16.png">
-	<link rel="manifest" href="../../assets/img/favicon/site.webmanifest">
-	<link rel="mask-icon" href="../../assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin/img/favicon/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets-admin/img/favicon/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets-admin/img/favicon/favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ asset('assets-admin/img/favicon/site.webmanifest') }}">
+	<link rel="mask-icon" href="{{ asset('assets-admin/img/favicon/safari-pinned-tab.svg') }}" color="#ffffff">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Volt CSS -->
-	<link type="text/css" href="{{ asset('assets-admin/css/') }}" rel="stylesheet">
-
+	<link type="text/css" href="{{ asset('assets-admin/css/volt.css') }}" rel="stylesheet">
 </head>
 
 <body>
+	<!-- Navbar mobile -->
 	<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
-		<a class="navbar-brand me-lg-5" href="../../index.html">
-			<img class="navbar-brand-dark" src="../../assets/img/brand/light.svg" alt="Volt logo" />
-			<img class="navbar-brand-light" src="../../assets/img/brand/dark.svg" alt="Volt logo" />
+		<a class="navbar-brand me-lg-5" href="{{ url('/') }}">
+			<img class="navbar-brand-dark" src="{{ asset('assets-admin/img/brand/light.svg') }}" alt="Volt logo" />
+			<img class="navbar-brand-light" src="{{ asset('assets-admin/img/brand/dark.svg') }}" alt="Volt logo" />
 		</a>
 		<div class="d-flex align-items-center">
 			<button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
@@ -55,19 +37,19 @@
 		</div>
 	</nav>
 
+	<!-- Sidebar -->
 	<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
 		<div class="sidebar-inner px-4 pt-3">
 			<div
 				class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
 				<div class="d-flex align-items-center">
 					<div class="avatar-lg me-4">
-						<img src="../../assets/img/team/profile-picture-3.jpg"
-							class="card-img-top rounded-circle border-white" alt="Bonnie Green">
+						<img class="avatar rounded-circle" alt="Liska"
+							src="{{ asset('assets-admin/img/team/profile.jpg') }}">
 					</div>
 					<div class="d-block">
-						<h2 class="h5 mb-3">Hi, Jane</h2>
-						<a href="../../pages/examples/sign-in.html"
-							class="btn btn-secondary btn-sm d-inline-flex align-items-center">
+						<h2 class="h5 mb-3">Hi, Liska</h2>
+						<a href="#" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
 							<svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
 								xmlns="http://www.w3.org/2000/svg">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -92,15 +74,15 @@
 			</div>
 			<ul class="nav flex-column pt-3 pt-md-0">
 				<li class="nav-item">
-					<a href="../../index.html" class="nav-link d-flex align-items-center">
+					<a href="#" class="nav-link d-flex align-items-center">
 						<span class="sidebar-icon">
-							<img src="../../assets/img/brand/light.svg" height="20" width="20" alt="Volt Logo">
+							<img src="{{ asset('assets-admin/img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
 						</span>
 						<span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
 					</a>
 				</li>
-				<li class="nav-item  active ">
-					<a href="../../pages/dashboard/dashboard.html" class="nav-link">
+				<li class="nav-item active">
+					<a href="#" class="nav-link">
 						<span class="sidebar-icon">
 							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg">
@@ -130,8 +112,8 @@
 						</span>
 					</a>
 				</li>
-				<li class="nav-item ">
-					<a href="../../pages/transactions.html" class="nav-link">
+				<li class="nav-item">
+					<a href="#" class="nav-link">
 						<span class="sidebar-icon">
 							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg">
@@ -144,8 +126,8 @@
 						<span class="sidebar-text">Transactions</span>
 					</a>
 				</li>
-				<li class="nav-item ">
-					<a href="../../pages/settings.html" class="nav-link">
+				<li class="nav-item">
+					<a href="#" class="nav-link">
 						<span class="sidebar-icon">
 							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
 								xmlns="http://www.w3.org/2000/svg">
@@ -196,7 +178,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
+					<span class="nav-link collapsed d-flex justify-content-between align-items-center"
 						data-bs-toggle="collapse" data-bs-target="#submenu-app">
 						<span>
 							<span class="sidebar-icon">
@@ -218,10 +200,10 @@
 							</svg>
 						</span>
 					</span>
-					<div class="multi-level collapse " role="list" id="submenu-app" aria-expanded="false">
+					<div class="multi-level collapse" role="list" id="submenu-app" aria-expanded="false">
 						<ul class="flex-column nav">
-							<li class="nav-item ">
-								<a class="nav-link" href="../../pages/tables/bootstrap-tables.html">
+							<li class="nav-item">
+								<a class="nav-link" href="#">
 									<span class="sidebar-text">Bootstrap Tables</span>
 								</a>
 							</li>
@@ -229,7 +211,7 @@
 					</div>
 				</li>
 				<li class="nav-item">
-					<span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
+					<span class="nav-link collapsed d-flex justify-content-between align-items-center"
 						data-bs-toggle="collapse" data-bs-target="#submenu-pages">
 						<span>
 							<span class="sidebar-icon">
@@ -252,48 +234,20 @@
 							</svg>
 						</span>
 					</span>
-					<div class="multi-level collapse " role="list" id="submenu-pages" aria-expanded="false">
+					<div class="multi-level collapse" role="list" id="submenu-pages" aria-expanded="false">
 						<ul class="flex-column nav">
-							<li class="nav-item">
-								<a class="nav-link" href="../../pages/examples/sign-in.html">
-									<span class="sidebar-text">Sign In</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../../pages/examples/sign-up.html">
-									<span class="sidebar-text">Sign Up</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../../pages/examples/forgot-password.html">
-									<span class="sidebar-text">Forgot password</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../../pages/examples/reset-password.html">
-									<span class="sidebar-text">Reset password</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../../pages/examples/lock.html">
-									<span class="sidebar-text">Lock</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../../pages/examples/404.html">
-									<span class="sidebar-text">404 Not Found</span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="../../pages/examples/500.html">
-									<span class="sidebar-text">500 Not Found</span>
-								</a>
-							</li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Sign In</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Sign Up</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Forgot password</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Reset password</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Lock</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">404 Not Found</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">500 Not Found</span></a></li>
 						</ul>
 					</div>
 				</li>
 				<li class="nav-item">
-					<span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
+					<span class="nav-link collapsed d-flex justify-content-between align-items-center"
 						data-bs-toggle="collapse" data-bs-target="#submenu-components">
 						<span>
 							<span class="sidebar-icon">
@@ -316,7 +270,7 @@
 							</svg>
 						</span>
 					</span>
-					<div class="multi-level collapse " role="list" id="submenu-components" aria-expanded="false">
+					<div class="multi-level collapse" role="list" id="submenu-components" aria-expanded="false">
 						<ul class="flex-column nav">
 							<li class="nav-item">
 								<a class="nav-link" target="_blank"
@@ -324,31 +278,11 @@
 									<span class="sidebar-text">All Components</span>
 								</a>
 							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="../../pages/components/buttons.html">
-									<span class="sidebar-text">Buttons</span>
-								</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="../../pages/components/notifications.html">
-									<span class="sidebar-text">Notifications</span>
-								</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="../../pages/components/forms.html">
-									<span class="sidebar-text">Forms</span>
-								</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="../../pages/components/modals.html">
-									<span class="sidebar-text">Modals</span>
-								</a>
-							</li>
-							<li class="nav-item ">
-								<a class="nav-link" href="../../pages/components/typography.html">
-									<span class="sidebar-text">Typography</span>
-								</a>
-							</li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Buttons</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Notifications</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Forms</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Modals</span></a></li>
+							<li class="nav-item"><a class="nav-link" href="#"><span class="sidebar-text">Typography</span></a></li>
 						</ul>
 					</div>
 				</li>
@@ -371,13 +305,13 @@
 				<li class="nav-item">
 					<a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
 						<span class="sidebar-icon">
-							<img src="../../assets/img/themesberg.svg" height="20" width="28" alt="Themesberg Logo">
+							<img src="{{ asset('assets-admin/img/themesberg.svg') }}" height="20" width="28" alt="Themesberg Logo">
 						</span>
 						<span class="sidebar-text">Themesberg</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="../../pages/upgrade-to-pro.html"
+					<a href="#"
 						class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">
 						<span class="sidebar-icon d-inline-flex align-items-center justify-content-center">
 							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -396,17 +330,16 @@
 
 	<main class="content">
 
+		<!-- Top navbar -->
 		<nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
 			<div class="container-fluid px-0">
 				<div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
 					<div class="d-flex align-items-center">
-						<!-- Search form -->
 						<form class="navbar-search form-inline" id="navbar-search-main">
 							<div class="input-group input-group-merge search-bar">
 								<span class="input-group-text" id="topbar-addon">
-									<svg class="icon icon-xs" x-description="Heroicon name: solid/search"
-										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-										aria-hidden="true">
+									<svg class="icon icon-xs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+										fill="currentColor" aria-hidden="true">
 										<path fill-rule="evenodd"
 											d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
 											clip-rule="evenodd"></path>
@@ -416,9 +349,7 @@
 									aria-label="Search" aria-describedby="topbar-addon">
 							</div>
 						</form>
-						<!-- / Search form -->
 					</div>
-					<!-- Navbar links -->
 					<ul class="navbar-nav align-items-center">
 						<li class="nav-item dropdown">
 							<a class="nav-link text-dark notification-bell unread dropdown-toggle"
@@ -438,9 +369,8 @@
 									<a href="#" class="list-group-item list-group-item-action border-bottom">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<img alt="Image placeholder"
-													src="../../assets/img/team/profile-picture-1.jpg"
+													src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}"
 													class="avatar-md rounded">
 											</div>
 											<div class="col ps-0 ms-2">
@@ -461,9 +391,8 @@
 									<a href="#" class="list-group-item list-group-item-action border-bottom">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<img alt="Image placeholder"
-													src="../../assets/img/team/profile-picture-2.jpg"
+													src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}"
 													class="avatar-md rounded">
 											</div>
 											<div class="col ps-0 ms-2">
@@ -497,10 +426,10 @@
 							<a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false">
 								<div class="media d-flex align-items-center">
-									<img class="avatar rounded-circle" alt="Image placeholder"
-										src="../../assets/img/team/profile-picture-3.jpg">
+									<img class="avatar rounded-circle" alt="Liska"
+										src="{{ asset('assets-admin/img/team/profile.jpg') }}">
 									<div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-										<span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
+										<span class="mb-0 font-small fw-bold text-gray-900">Liska</span>
 									</div>
 								</div>
 							</a>
@@ -558,6 +487,7 @@
 			</div>
 		</nav>
 
+		<!-- New Task -->
 		<div class="py-4">
 			<div class="dropdown">
 				<button class="btn btn-gray-800 d-inline-flex align-items-center me-2 dropdown-toggle"
@@ -624,6 +554,7 @@
 		<div class="row">
 			<div class="col-12 col-xl-8">
 				<div class="row">
+					<!-- Page visits -->
 					<div class="col-12 mb-4">
 						<div class="card border-0 shadow">
 							<div class="card-header">
@@ -648,15 +579,9 @@
 									</thead>
 									<tbody>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/index.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												3,225
-											</td>
-											<td class="fw-bolder text-gray-500">
-												$20
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/index.html</th>
+											<td class="fw-bolder text-gray-500">3,225</td>
+											<td class="fw-bolder text-gray-500">$20</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-danger me-2" fill="currentColor"
@@ -670,15 +595,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/forms.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												2,987
-											</td>
-											<td class="fw-bolder text-gray-500">
-												0
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/forms.html</th>
+											<td class="fw-bolder text-gray-500">2,987</td>
+											<td class="fw-bolder text-gray-500">0</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-success me-2" fill="currentColor"
@@ -692,15 +611,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/util.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												2,844
-											</td>
-											<td class="fw-bolder text-gray-500">
-												294
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/util.html</th>
+											<td class="fw-bolder text-gray-500">2,844</td>
+											<td class="fw-bolder text-gray-500">294</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-success me-2" fill="currentColor"
@@ -714,15 +627,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/validation.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												2,050
-											</td>
-											<td class="fw-bolder text-gray-500">
-												$147
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/validation.html</th>
+											<td class="fw-bolder text-gray-500">2,050</td>
+											<td class="fw-bolder text-gray-500">$147</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-danger me-2" fill="currentColor"
@@ -736,15 +643,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/modals.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												1,483
-											</td>
-											<td class="fw-bolder text-gray-500">
-												$19
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/modals.html</th>
+											<td class="fw-bolder text-gray-500">1,483</td>
+											<td class="fw-bolder text-gray-500">$19</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-success me-2" fill="currentColor"
@@ -762,6 +663,8 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- Team members -->
 					<div class="col-12 col-xxl-6 mb-4">
 						<div class="card border-0 shadow">
 							<div class="card-header border-bottom d-flex align-items-center justify-content-between">
@@ -773,16 +676,13 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-1.jpg">
+														src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
-												<h4 class="h6 mb-0">
-													<a href="#">Chris Wood</a>
-												</h4>
+												<h4 class="h6 mb-0"><a href="#">Chris Wood</a></h4>
 												<div class="d-flex align-items-center">
 													<div class="bg-success dot rounded-circle me-1"></div>
 													<small>Online</small>
@@ -805,16 +705,13 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-2.jpg">
+														src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
-												<h4 class="h6 mb-0">
-													<a href="#">Jose Leos</a>
-												</h4>
+												<h4 class="h6 mb-0"><a href="#">Jose Leos</a></h4>
 												<div class="d-flex align-items-center">
 													<div class="bg-warning dot rounded-circle me-1"></div>
 													<small>In a meeting</small>
@@ -837,16 +734,13 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-3.jpg">
+														src="{{ asset('assets-admin/img/team/profile.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
-												<h4 class="h6 mb-0">
-													<a href="#">Bonnie Green</a>
-												</h4>
+												<h4 class="h6 mb-0"><a href="#">Liska</a></h4>
 												<div class="d-flex align-items-center">
 													<div class="bg-danger dot rounded-circle me-1"></div>
 													<small>Offline</small>
@@ -869,16 +763,13 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-4.jpg">
+														src="{{ asset('assets-admin/img/team/profile-picture-4.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
-												<h4 class="h6 mb-0">
-													<a href="#">Neil Sims</a>
-												</h4>
+												<h4 class="h6 mb-0"><a href="#">Neil Sims</a></h4>
 												<div class="d-flex align-items-center">
 													<div class="bg-danger dot rounded-circle me-1"></div>
 													<small>Offline</small>
@@ -902,6 +793,8 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- Progress track -->
 					<div class="col-12 col-xxl-6 mb-4">
 						<div class="card border-0 shadow">
 							<div class="card-header border-bottom d-flex align-items-center justify-content-between">
@@ -909,7 +802,6 @@
 								<a href="#" class="btn btn-sm btn-primary">See tasks</a>
 							</div>
 							<div class="card-body">
-								<!-- Project 1 -->
 								<div class="row mb-4">
 									<div class="col-auto">
 										<svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
@@ -934,7 +826,6 @@
 										</div>
 									</div>
 								</div>
-								<!-- Project 2 -->
 								<div class="row align-items-center mb-4">
 									<div class="col-auto">
 										<svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
@@ -959,7 +850,6 @@
 										</div>
 									</div>
 								</div>
-								<!-- Project 3 -->
 								<div class="row align-items-center mb-4">
 									<div class="col-auto">
 										<svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
@@ -984,7 +874,6 @@
 										</div>
 									</div>
 								</div>
-								<!-- Project 4 -->
 								<div class="row align-items-center mb-3">
 									<div class="col-auto">
 										<svg class="icon icon-sm text-gray-500" fill="currentColor" viewBox="0 0 20 20"
@@ -1014,23 +903,36 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Kolom kanan -->
 			<div class="col-12 col-xl-4">
+				<!-- Kartu profil -->
 				<div class="col-12 px-0 mb-4">
 					<div class="card shadow border-0 text-center p-0">
-						<div class="profile-cover rounded-top" data-background="../../assets/img/profile-cover.jpg" style="background: url(&quot;../../assets/img/profile-cover.jpg&quot;);"></div>
+						<div class="profile-cover rounded-top"
+							style="background: url('{{ asset('assets-admin/img/profile-cover.jpg') }}'); background-size: cover; background-position: center;">
+						</div>
 						<div class="card-body pb-5">
-							<img src="../../assets/img/team/profile-picture-1.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
-							<h4 class="h3">Neil Sims</h4>
+							<img src="{{ asset('assets-admin/img/team/profile.jpg') }}"
+								class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Liska">
+							<h4 class="h3">Liska</h4>
 							<h5 class="fw-normal">Senior Software Engineer</h5>
 							<p class="text-gray mb-4">New York, USA</p>
 							<a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="#">
-								<svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path></svg>
+								<svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+									</path>
+								</svg>
 								Connect
 							</a>
 							<a class="btn btn-sm btn-secondary" href="#">Send Message</a>
 						</div>
-					 </div>
+					</div>
 				</div>
+
+				<!-- Rank -->
 				<div class="col-12 px-0 mb-4">
 					<div class="card border-0 shadow">
 						<div class="card-body">
@@ -1106,7 +1008,7 @@
 										Category Rank
 									</div>
 									<div class="small card-stats">
-										Computers Electronics > Technology
+										Computers Electronics &gt; Technology
 										<svg class="icon icon-xs text-success" fill="currentColor" viewBox="0 0 20 20"
 											xmlns="http://www.w3.org/2000/svg">
 											<path fill-rule="evenodd"
@@ -1130,13 +1032,14 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- Acquisition -->
 				<div class="col-12 px-0">
 					<div class="card border-0 shadow">
 						<div class="card-body">
 							<h2 class="fs-5 fw-bold mb-1">Acquisition</h2>
 							<p>Tells you where your visitors originated from, such as search engines, social networks or
-								website
-								referrals.</p>
+								website referrals.</p>
 							<div class="d-block">
 								<div class="d-flex align-items-center me-5">
 									<div class="icon-shape icon-sm icon-shape-danger rounded me-3">
@@ -1179,32 +1082,26 @@
 					</p>
 				</div>
 				<div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-					<!-- List -->
 					<ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
-						<li class="list-inline-item px-0 px-sm-2">
-							<a href="https://themesberg.com/about">About</a>
-						</li>
-						<li class="list-inline-item px-0 px-sm-2">
-							<a href="https://themesberg.com/themes">Themes</a>
-						</li>
-						<li class="list-inline-item px-0 px-sm-2">
-							<a href="https://themesberg.com/blog">Blog</a>
-						</li>
-						<li class="list-inline-item px-0 px-sm-2">
-							<a href="https://themesberg.com/contact">Contact</a>
-						</li>
+						<li class="list-inline-item px-0 px-sm-2"><a href="https://themesberg.com/about">About</a></li>
+						<li class="list-inline-item px-0 px-sm-2"><a href="https://themesberg.com/themes">Themes</a></li>
+						<li class="list-inline-item px-0 px-sm-2"><a href="https://themesberg.com/blog">Blog</a></li>
+						<li class="list-inline-item px-0 px-sm-2"><a href="https://themesberg.com/contact">Contact</a></li>
 					</ul>
 				</div>
 			</div>
 		</footer>
 	</main>
 
-	<!-- Core -->
-	<script src="../../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
-	<script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- Core JS -->
+	<script src="{{ asset('assets-admin/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
 	<!-- Vendor JS -->
-	<script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+	<script src="{{ asset('assets-admin/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
+
+	<!-- Volt JS -->
+	<script src="{{ asset('assets-admin/js/volt.js') }}"></script>
 </body>
 
 </html>
