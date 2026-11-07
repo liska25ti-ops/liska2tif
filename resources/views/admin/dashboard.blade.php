@@ -84,6 +84,16 @@
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
+				<li class="nav-item {{ request()->is('pelanggan*') ? 'active' : '' }}">
+    <a href="{{ route('pelanggan.create') }}" class="nav-link">
+        <span class="sidebar-icon">
+            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+            </svg>
+        </span>
+        <span class="sidebar-text">Pelanggan</span>
+    </a>
+</li>
                 <li class="nav-item">
                     <span class="nav-link  collapsed  d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#submenu-app">
                         <span>
