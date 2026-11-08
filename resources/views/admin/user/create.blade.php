@@ -14,6 +14,17 @@
 
     <div class="card border-0 shadow mb-4">
         <div class="card-body">
+
+            @if ($errors->any())
+                <div class="alert alert-danger mb-3">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <form action="{{ route('users.store') }}" method="POST">
                 @csrf
                 <div class="row">
@@ -53,9 +64,10 @@
                     </div>
                 </div>
 
+                <!-- Tombol Simpan (Hijau) & Batal (Merah) -->
                 <div class="mt-3">
-                    <button type="submit" class="btn btn-dark">Simpan</button>
-                    <a href="{{ route('users.index') }}" class="btn btn-link text-gray-600">Batal</a>
+                    <button type="submit" class="btn btn-success text-white me-2">Simpan</button>
+                    <a href="{{ route('users.index') }}" class="btn btn-danger text-white">Batal</a>
                 </div>
             </form>
         </div>

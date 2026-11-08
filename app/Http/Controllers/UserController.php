@@ -19,23 +19,23 @@ class UserController extends Controller
         return view('admin.user.create');
     }
 
-    public function store(Request $request)
-    {
-        // Validasi tanpa batasan min:8
-        $request->validate([
-            'name'     => 'required|string|max:100',
-            'email'    => 'required|email|unique:users,email',
-            'password' => 'required|string|confirmed',
-        ]);
+public function store(Request $request)
+{
+    // Validasi sesuai modul (nama max 100, email unik, password min 8 & konfirmasi)
+    $request->validate([
+        'name'     => 'required|string|max:100',
+        'email'    => 'required|email|unique:users,email',
+        'password' => 'required|string|min:8|confirmed',
+    ]);
 
-        User::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+    User::create([
+        'name'     => $request->name,
+        'email'    => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
 
-        return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan!');
-    }
+    return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan!');
+}
 
     public function edit($id)
     {
@@ -43,29 +43,30 @@ class UserController extends Controller
         return view('admin.user.edit', compact('user'));
     }
 
-    public function update(Request $request, $id)
-    {
-        $user = User::findOrFail($id);
+public function update(Request $request, $id)
+{
+    $user = User::findOrFail($id);
 
-        $request->validate([
-            'name'     => 'required|string|max:100',
-            'email'    => 'required|email|unique:users,email,' . $id,
-            'password' => 'nullable|string|confirmed',
-        ]);
+    // Validasi edit (password nullable agar tidak wajib diisi jika tidak ingin diubah)
+    $request->validate([
+        'name'     => 'required|string|max:100',
+        'email'    => 'required|email|unique:users,email,' . $id,
+        'password' => 'nullable|string|min:8|confirmed',
+    ]);
 
-        $data = [
-            'name'  => $request->name,
-            'email' => $request->email,
-        ];
+    $data = [
+        'name'  => $request->name,
+        'email' => $request->email,
+    ];
 
-        if ($request->filled('password')) {
-            $data['password'] = Hash::make($request->password);
-        }
-
-        $user->update($data);
-
-        return redirect()->route('users.index')->with('success', 'User berhasil diperbarui!');
+    if ($request->filled('password')) {
+        $data['password'] = Hash::make($request->password);
     }
+
+    $user->update($data);
+
+    return redirect()->route('users.index')->with('success', 'User berhasil diperbarui!');
+}
 
     public function destroy($id)
     {
