@@ -41,13 +41,24 @@
 
                 <!-- Menu Pelanggan -->
                 <li class="nav-item {{ request()->is('pelanggan*') ? 'active' : '' }}">
-                    <a href="{{ route('pelanggan.create') }}" class="nav-link">
+                    <a href="{{ route('pelanggan.index') }}" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
                         </span>
                         <span class="sidebar-text">Pelanggan</span>
                     </a>
                 </li>
+
+                <!-- Menu User -->
+                <li class="nav-item {{ request()->is('users*') ? 'active' : '' }}">
+                    <a href="{{ route('users.index') }}" class="nav-link">
+                        <span class="sidebar-icon">
+                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                        </span>
+                        <span class="sidebar-text">User</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </nav>
@@ -86,14 +97,14 @@
             </div>
         </nav>
 
-        <!-- Area Konten Dinamis (Form Pelanggan / Isi Halaman) -->
+        <!-- Area Konten Dinamis -->
         @yield('content')
 
         <!-- Footer -->
         <footer class="bg-white rounded shadow p-4 mb-4 mt-4">
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-6 mb-4 mb-md-0">
-                    <p class="mb-0 text-center text-lg-start">© 2019- Themesberg</p>
+                    <p class="mb-0 text-center text-lg-start">© 2026- Themesberg</p>
                 </div>
                 <div class="col-12 col-md-8 col-lg-6 text-end">
                     <ul class="list-inline list-group-flush list-group-borderless mb-0">

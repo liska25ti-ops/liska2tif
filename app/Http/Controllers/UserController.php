@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::latest()->paginate(10);
+        $users = User::all();
         return view('admin.user.index', compact('users'));
     }
 
@@ -21,37 +21,40 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        // Validasi input (password_confirmation akan otomatis dicocokkan oleh rule 'confirmed')
+        // Validasi tanpa batasan min:8
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed', 
+            'name'     => 'required|string|max:100',
+            'email'    => 'required|email|unique:users,email',
+            'password' => 'required|string|confirmed',
         ]);
 
         User::create([
-            'name' => $request->name,
-            'email' => $request->email,
+            'name'     => $request->name,
+            'email'    => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
         return redirect()->route('users.index')->with('success', 'User berhasil ditambahkan!');
     }
 
-    public function edit(User $user)
+    public function edit($id)
     {
+        $user = User::findOrFail($id);
         return view('admin.user.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
+        $user = User::findOrFail($id);
+
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'password' => 'nullable|string|min:8|confirmed',
+            'name'     => 'required|string|max:100',
+            'email'    => 'required|email|unique:users,email,' . $id,
+            'password' => 'nullable|string|confirmed',
         ]);
 
         $data = [
-            'name' => $request->name,
+            'name'  => $request->name,
             'email' => $request->email,
         ];
 
@@ -64,9 +67,11 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User berhasil diperbarui!');
     }
 
-    public function destroy(User $user)
+    public function destroy($id)
     {
+        $user = User::findOrFail($id);
         $user->delete();
+
         return redirect()->route('users.index')->with('success', 'User berhasil dihapus!');
     }
 }
