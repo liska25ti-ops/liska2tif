@@ -20,6 +20,7 @@
                             <th class="border-0">#</th>
                             <th class="border-0">Nama</th>
                             <th class="border-0">Email</th>
+                            <th class="border-0">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,6 +29,14 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
+                            <td>
+                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-info text-white">Edit</a>
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus user ini?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
