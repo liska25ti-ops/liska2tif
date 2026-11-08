@@ -6,6 +6,10 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelangganController;
 
+use App\Http\Controllers\UserController;
+
+Route::resource('users', UserController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
